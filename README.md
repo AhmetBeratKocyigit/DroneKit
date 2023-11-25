@@ -28,67 +28,67 @@ Ardupilot SITL programını kurmak için öncelikle Git'i kurmamız gerekiyor
 ### Git Kurulumu
 
 ```bash
-  sudo apt-get update
+sudo apt-get update
 ```
 
 ```bash
-  sudo apt-get upgrade
+sudo apt-get upgrade
 ```
 
 
 ```bash
-  sudo apt-get install git
+sudo apt-get install git
 ```
 
 ```bash
-  sudo apt-get install gitk git-gui
+sudo apt-get install gitk git-gui
 ```
 
 ### Git üzerinden Ardupilot SITL dosyalarını indirme
 
 ```bash
-  git clone https://github.com/ArduPilot/ardupilot.git
+git clone https://github.com/ArduPilot/ardupilot.git
 ```
 
 ### Gerekli Bileşenlerin Yüklenmesi
 
 ```bash
-  cd ardupilot
+cd ardupilot
 ```
 
 ```bash
-  git submodule update --init --recursive
+git submodule update --init --recursive
 ```
 
 ```bash
-  sudo apt install python-matplotlib python-serial python-wxgtk4.0 python-wxtools
-  python-lxml python-scipy python-opencv ccache gawk python-pip python-pexpect
+sudo apt install python-matplotlib python-serial python-wxgtk4.0 python-wxtools
+python-lxml python-scipy python-opencv ccache gawk python-pip python-pexpect
 
 ```
 
 ```bash
-  gedit ~/.bashrc
+gedit ~/.bashrc
 ```
 .bashrc dosyası açıldıktan sonra en alt satıra inerek alttaki iki satırı yapıştırmanız gerekiyor
 
 ```bash
-  export PATH=$PATH:$HOME/ardupilot/Tools/autotest
-  export PATH=/usr/lib/ccache:$PATH
+export PATH=$PATH:$HOME/ardupilot/Tools/autotest
+export PATH=/usr/lib/ccache:$PATH
 ```
 
 
 ```bash
-  . ~/.bashrc
+. ~/.bashrc
 ```
 
 ```bash
-  sudo pip install future pymavlink MAVProxy
+sudo pip install future pymavlink MAVProxy
 ```
 
 ### Ve Son Olarak Programın Çalıştırılması
 
 ```bash
-  cd ~/ardupilot/ArduCopter
+cd ~/ardupilot/ArduCopter
 ```
 
 ```bash
