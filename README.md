@@ -204,6 +204,9 @@ cd ~/ardupilot/ArduCopter
 
 Gazebo Bize Yazdığımız Kodları Gerçek Uçuşdan Önce Kodlarımızı Test Etmeye İmkan Sunuyor Bu Sayede Yazılımsal Sorunlardan Dolayı Çıkabilecek Kazaların Önüne Geçilmiş Olunur
 
+```bash
+sudo apt-get install python-pip python-dev python3-pip python3-dev
+```
 
 ```bash
 pip install dronekit
