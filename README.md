@@ -10,6 +10,8 @@ VMware programının setup dosyasını indirmek için : https://www.vmware.com/p
 
 Ubuntu işletim sisteminin İSO dosyasını indirmek için : https://releases.ubuntu.com/18.04.6/?_ga=2.59504109.1117219064.1700847152-2047495795.1700847152
 
+Video : https://youtu.be/RoPxb5IMolQ
+
 - - -
 
 # Gerekli Programların Kurulması
@@ -29,6 +31,8 @@ DroneKit ile drone programlama için gerekli olan programlar
 ArduPilot Herhangi Bir Ek Donanım Olmadan Uçuşları Simüle Edebilmemizi Sağlıyor
 
 Ardupilot SITL programını kurmak için öncelikle Git'i kurmamız gerekiyor
+
+Video : https://youtu.be/s6PudIehiRc
 
 ### Git Kurulumu
 
@@ -103,6 +107,8 @@ cd ~/ardupilot/ArduCopter
 - - -
 
 ## Gazebo
+
+Video : https://youtu.be/meYmYmBanPU
 
 Gerekli İzinlerin Ayarlanması
 
