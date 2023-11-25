@@ -230,23 +230,43 @@ import dronekit
 DroneKit Kütüphanesini Kodumuzu Dahil Etmek İçin Kullanılır
 
 ```python
-vehicle.mode = VehicleMode("GUIDED")
+from dronekit import *
+```
+DroneKit Kütüphanesinin İçindeki Tüm Paketleri Dahil Etmek İçin Kullanılır
+
+```python
+print(drone.armed)
+```
+Drone'nin Arm Durumunu True Yada False Şekline Verir
+
+```python
+drone.armed = True
+```
+Drone'nin Arm Durumunu True Yada False Şekline Verir
+
+```python
+drone = connect("ıp")
+```
+Bilgisayarın İHA'ya Bağlanmasını Sağlar
+
+```python
+drone.mode = VehicleMode("GUIDED")
 ```
 VehicleMode'yi GUIDED Olarak Ayarlanmasına Yarar Yani Bilgisayardan Veri Alabilmesine Bizim Droneye Komut Verebilmemizi Sağlar. Drone 
 Stabilize Modundayken Drone Dışarıdan Gelen Verilere Açık Değildir
 
 ```python
-vehicle.simple_takeoff(10)
+drone.simple_takeoff(10)
 ```
 Dronenin Kalkış Yapmasını Sağlar Yani Fonksiyona Verdiğimiz Değer Kadar Yükselir
 
 ```python
 point2 = LocationGlobalRelative(-35.363244, 149.168801, 20)
-vehicle.simple_goto(point2, groundspeed=10)
+drone.simple_goto(point2, groundspeed=10)
 ```
 Dronenin poınt2 Olarak Belirtilen Konuma Gitmesini Sağlar
 
 ```python
-vehicle.mode = VehicleMode("RTL")
+drone.mode = VehicleMode("RTL")
 ```
 Dronenin RTL Moduna Ayarlanmasını Sağlar RTL Kelimesinin Açılımı Olan "Retun To Land" Dronenin Tekrardan Yere Dönmesini Sağlar
