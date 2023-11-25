@@ -1,5 +1,7 @@
 # DroneKit İle Drone Programlama
 
+![Black and White Minimalist Gaming Channel Banner Landscape](https://github.com/AhmetBeratKocyigit/DroneKit/assets/135528027/e1ef9433-0efa-4ac1-a8cc-9c2347cb450f)
+
 - - -
 
 # Sanal Makinaya Ubuntu Kurmak
