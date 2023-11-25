@@ -29,12 +29,18 @@ Ardupilot SITL programını kurmak için öncelikle Git'i kurmamız gerekiyor
 
 ```bash
   sudo apt-get update
+```
+
+```bash
   sudo apt-get upgrade
 ```
 
 
 ```bash
   sudo apt-get install git
+```
+
+```bash
   sudo apt-get install gitk git-gui
 ```
 
@@ -48,6 +54,9 @@ Ardupilot SITL programını kurmak için öncelikle Git'i kurmamız gerekiyor
 
 ```bash
   cd ardupilot
+```
+
+```bash
   git submodule update --init --recursive
 ```
 
@@ -60,11 +69,13 @@ Ardupilot SITL programını kurmak için öncelikle Git'i kurmamız gerekiyor
 ```bash
   gedit ~/.bashrc
 ```
+.bashrc dosyası açıldıktan sonra en alt satıra inerek alttaki iki satırı yapıştırmanız gerekiyor
 
 ```bash
   export PATH=$PATH:$HOME/ardupilot/Tools/autotest
   export PATH=/usr/lib/ccache:$PATH
 ```
+
 
 ```bash
   . ~/.bashrc
@@ -78,5 +89,8 @@ Ardupilot SITL programını kurmak için öncelikle Git'i kurmamız gerekiyor
 
 ```bash
   cd ~/ardupilot/ArduCopter
+```
+
+```bash
   ../Tools/autotest/sim_vehicle.py -w --console --map
 ```
