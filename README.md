@@ -216,14 +216,6 @@ pip install dronekit
 pip3 install dronekit
 ```
 
-```bash
-pip install dronekit-sitl
-```
-
-```bash
-pip3 install dronekit-sitl
-```
-
 - - -
 
 ## DroneKit Kullanımı
