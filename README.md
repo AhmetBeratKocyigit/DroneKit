@@ -6,7 +6,7 @@
 
 # Sanal Makinaya Ubuntu Kurmak
 
-DroneKit kütüphanesi kullanmak için önecelikle Ubuntu işletim sistemine sahip bir bilgisayara ihtiyaç duyuyoruz. Windows işletim sisteminde sanal bilgisayar yazılımları ile bu ihtiyacımızı karşılıyabiliyoruz
+DroneKit kütüphanesi kullanmak için öncelikle Ubuntu işletim sistemine sahip bir bilgisayara ihtiyaç duyuyoruz. Windows işletim sisteminde sanal bilgisayar yazılımları ile bu ihtiyacımızı karşılıyabiliyoruz
 
 VMware programının setup dosyasını indirmek için : https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html
 
@@ -222,6 +222,8 @@ pip3 install dronekit
 
 ## DroneKit Kullanımı
 
+Video : https://youtu.be/nK-qHtaBpiM
+
 İşte DroneKit Kütüphanesinin Bazı Temel Kodları:
 
 ```python
@@ -270,3 +272,29 @@ Dronenin poınt2 Olarak Belirtilen Konuma Gitmesini Sağlar
 drone.mode = VehicleMode("RTL")
 ```
 Dronenin RTL Moduna Ayarlanmasını Sağlar RTL Kelimesinin Açılımı Olan "Retun To Land" Dronenin Tekrardan Yere Dönmesini Sağlar
+
+- - -
+
+## Temel Kodlar
+
+Daha önce de drone'nin irtifasını ayarlamak için `simple_takeoff` komutunu kullandığımızı söylemsiştim ama bunu koda dökmek gerekise:
+
+```python
+
+from dronekit import connect , VehicleMode , LocationGlobalRelative
+
+drone = connect("127.0.0.1:50000")
+
+drone.mode = VehicleMode("GUIDED")
+
+drone.armed = True
+
+drone.simple_takeoff(20)
+
+```
+
+Bu kodda `from dronekit import connect , VehicleMode , LocationGlobalRelative` satırı dronekit kütüphanesi içerisinden belirlediğimiz paketleri import etmemizi sağlıyor
+`drone = connect("127.0.0.1:50000")` Komutu ise drone'ye bağlanmamızı sağlıyor
+`drone.mode = VehicleMode("GUIDED")` satırı ile İHA'yı "GUIDED" moduna almamızı sağlıyor
+`drone.armed = True` Satırı İHA'yı arm etmemizi sağlıyor
+ve son olarak `drone.simple_takeoff(20)` satırı ile Drone'nin yüksekliğini 20 metre olarak ayarlıyoruz
