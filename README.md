@@ -94,3 +94,91 @@ cd ~/ardupilot/ArduCopter
 ```bash
   ../Tools/autotest/sim_vehicle.py -w --console --map
 ```
+
+## Gazebo
+
+Gerekli İzinlerin Ayarlanması
+
+```bash
+  sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+```
+
+```bash
+  wget https://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+```
+
+Gazebo Programının Kurulumu
+
+```bash
+  sudo apt update
+```
+
+```bash
+  sudo apt-get install gazebo9
+```
+
+```bash
+  sudo apt-get install libgazebo9-dev
+```
+
+ArduPilot Eklentisinin Kurulması
+
+```bash
+  git clone https://github.com/khancyr/ardupilot_gazebo
+```
+
+```bash
+  cd ardupilot_gazebo
+```
+
+```bash
+  mkdir build
+```
+
+```bash
+  cd build
+```
+
+```bash
+  cmake ..
+```
+
+```bash
+  make -j4
+```
+
+```bash
+  sudo make install
+```
+
+```bash
+  echo 'source /usr/share/gazebo/setup.sh' >> ~/.bashrc
+```
+
+```bash
+  echo 'export GAZEBO_MODEL_PATH=~/ardupilot_gazebo/models' >> ~/.bashrc
+```
+
+Gazebo sanal makinede hata verirse aşağıdaki kodu terminalde çalıştırarak hatayı giderebilirsiniz.
+
+```bash
+  export SVGA_VGPU10=0
+```
+
+```bash
+  echo "export SVGA_VGPU10=0" >> ~/.bashrc
+```
+
+Vee Son Olarak Programı Çalıştırmak 
+
+```bash
+  gazebo --verbose worlds/iris_arducopter_runway.world
+```
+
+```bash
+  cd ~/ardupilot/ArduCopter
+```
+
+```bash
+  ../Tools/autotest/sim_vehicle.py -f gazebo-iris --console --map
+```
