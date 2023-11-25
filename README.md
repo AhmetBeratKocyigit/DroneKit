@@ -1,23 +1,5 @@
 # DroneKit Kullanımı
 
-This is an example markdown format text for DroneKit Tutorial.
-## Sub Title
-* Here is an code import example
-
-This is bash code example
-```bash
-  sudo apt update
-```
-Here is another example
-```bash
-  sudo apt update
-```
-This is a python code example
-```python
-  print("Hello World")
-```
-Here is another example `variable`
-
 
 # Sanal Makinaya Ubuntu Kurmak
 
@@ -43,6 +25,8 @@ DroneKit ile drone programlama için gerekli olan programlar
 
 Ardupilot SITL programını kurmak için öncelikle Git'i kurmamız gerekiyor
 
+### Git Kurulumu
+
 ```bash
   sudo apt-get update
   sudo apt-get upgrade
@@ -54,16 +38,45 @@ Ardupilot SITL programını kurmak için öncelikle Git'i kurmamız gerekiyor
   sudo apt-get install gitk git-gui
 ```
 
-Git üzerinden Ardupilot SITL dosyalarını indirme
+### Git üzerinden Ardupilot SITL dosyalarını indirme
 
 ```bash
   git clone https://github.com/ArduPilot/ardupilot.git
 ```
 
-Gerekli Bileşenlerin Yüklenmesi
+### Gerekli Bileşenlerin Yüklenmesi
+
+```bash
+  cd ardupilot
+  git submodule update --init --recursive
+```
 
 ```bash
   sudo apt install python-matplotlib python-serial python-wxgtk4.0 python-wxtools
   python-lxml python-scipy python-opencv ccache gawk python-pip python-pexpect
 
+```
+
+```bash
+  gedit ~/.bashrc
+```
+
+```bash
+  export PATH=$PATH:$HOME/ardupilot/Tools/autotest
+  export PATH=/usr/lib/ccache:$PATH
+```
+
+```bash
+  . ~/.bashrc
+```
+
+```bash
+  sudo pip install future pymavlink MAVProxy
+```
+
+### Ve Son Olarak Programın Çalıştırılması
+
+```bash
+  cd ~/ardupilot/ArduCopter
+  ../Tools/autotest/sim_vehicle.py -w --console --map
 ```
